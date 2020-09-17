@@ -1,8 +1,16 @@
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
 body {
   margin: 0;
+  padding:0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +18,87 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+input {
+  font-size: 1.8rem;
+  border-radius:3px;
+  border:1px solid gray;
+}
+
+select {
+  font-size: 1.8rem;
+  border-radius:3px;
+  border:1px solid gray;
+}
+
+.wrapper {
+  width:100%;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  }
+
+.card {
+  width:20%;
+  margin:2rem;
+  border:1px solid gray;
+  }
+
+.card img {
+  height:220px;
+  width:100%;
+  max-width:382px;
+  transition: all ease-in-out .3s;
+  }
+
+.card img:hover {
+  opacity: .8;
+}
+
+.photo {
+  display:flex;
+  justify-content: space-between;
+  color:white;
+  padding:1rem;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+.modal-open {
+  color:black;
+ }
+
+.modal {
+  position: absolute;
+  top:0;
+  left:0;
+  display:none;
+  pointer-events: none;
+  justify-content: center;
+  align-items: center;
+  color:black;
+  width:100%;
+  height:100%;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+.modal-active {
+  position: absolute;
+  top:0;
+  left:0;
+  display:flex;
+  pointer-events: all;
+  justify-content: center;
+  color:white;
+  font-size: 6rem;;
+  width:100%;
+  height:100%;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+.close-modal {
+  position: relative;
+  right:2%;
+  font-size: 3rem;
 }
