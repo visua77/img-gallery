@@ -22,14 +22,16 @@ code {
 
 input {
   font-size: 1.8rem;
+  color:silver;
   border-radius:3px;
-  border:1px solid gray;
+  border:1px solid rgba(0, 0, 0, .4);
 }
 
 select {
   font-size: 1.8rem;
+  color:gray;
   border-radius:3px;
-  border:1px solid gray;
+  border:1px solid rgba(0, 0, 0, .4);
 }
 
 .wrapper {
@@ -38,6 +40,14 @@ select {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  }
+
+  .search {
+    margin-top:1rem;
+    
+    border-radius:10px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, .15);;
+    padding:1rem;
   }
 
 .card {
@@ -101,4 +111,43 @@ select {
   position: relative;
   right:2%;
   font-size: 3rem;
+}
+
+@media (max-width:900px) {
+  
+  .wrapper {
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .card {
+      width:48%;
+      margin:2rem;
+      border:1px solid gray;
+      }
+
+      .card img {
+        height:220px;
+        width:100%;
+        max-width:382px;
+        transition: all ease-in-out .3s;
+        }
+
+        .modal-active img {
+          width:100%;
+          height:100%;
+          
+        }
+
+        .close-modal {
+          position: relative;
+          right:6%;
+          font-size: 3rem;
+        }
+
+
 }
