@@ -126,6 +126,8 @@ select {
 
 .modal-active img {
   cursor: pointer;
+  max-width:1280px;
+  max-height: 1280px;
 }
 
 .close-modal {
@@ -138,7 +140,7 @@ select {
 
 @media (max-width:900px) {
 
-  input {width:80%;}
+  input {width:70%;}
   
   .wrapper {
     width:100%;

@@ -13,12 +13,19 @@ export const Search = () => {
     const url = `https://pixabay.com/api/?key=14784007-d6d8c8cf15352d491ac7f70be&q=${text}&image_type=photo&per_page=${amount}`
 
 
+
     useEffect(() => {
       //console.log(amount)
       fetch(url)
         .then((res) => res.json())
         .then((json) => {
+          if(text != ''){
           setImages(json.hits)
+        }
+        if(text === ''){
+          setImages([])
+          console.log(images)
+        }
         })
         .catch(err => console.log(err))
     }, [amount])
