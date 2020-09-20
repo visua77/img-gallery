@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react'
+import React, {useState,useEffect,useRef} from 'react'
 import {Modal} from './Modal'
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)  
@@ -12,6 +12,24 @@ export const Search = () => {
     //console.log(amount)
     const url = `https://pixabay.com/api/?key=14784007-d6d8c8cf15352d491ac7f70be&q=${text}&image_type=photo&per_page=${amount}`
 
+
+    useEffect(() => {
+      console.log(amount)
+      fetch(url)
+        .then((res) => res.json())
+        .then((json) => {
+          setImages(json.hits)
+        })
+        .catch(err => console.log(err))
+    }, [amount])
+    
+    const handleNo = (e) => {
+      setAmount(e.target.value)
+      //console.log(amount)
+      //setText(e.target.value)
+    }
+    
+    
     const handleChange = (e) => {
         setText(e.target.value)
         fetch(url)
@@ -22,15 +40,9 @@ export const Search = () => {
         .catch(err => console.log(err))
     }
 
-    const handleNo = (e) => {
-    setAmount(e.target.value)
-    //console.log(amount)
-    }
 
     const handleModal = () => {
-        
-            setModaltoggle(prev => !prev )
-            console.log()
+        setModaltoggle(prev => !prev )
             //setCimg(images.img.largeImageURL)
 
     }
@@ -38,12 +50,14 @@ export const Search = () => {
     const myRef = useRef(null)
     const executeScroll = () => scrollToRef(myRef)
 
-    console.log(cimg)
+    //console.log(cimg)
     return (
         <div className="wrapper" ref={myRef}>
             <div className="search">
             <input name="searchtext" onChange={handleChange}></input>
-            <select onChange={handleNo}>
+            <select onChange={(e)=> {
+              handleNo(e)
+              }}>
               <option value="6">6</option>
               <option value="12">12</option>
               <option value="24">24</option>
