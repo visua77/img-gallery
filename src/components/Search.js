@@ -14,7 +14,7 @@ export const Search = () => {
 
 
     useEffect(() => {
-      console.log(amount)
+      //console.log(amount)
       fetch(url)
         .then((res) => res.json())
         .then((json) => {
@@ -39,7 +39,6 @@ export const Search = () => {
         })
         .catch(err => console.log(err))
     }
-
 
     const handleModal = () => {
         setModaltoggle(prev => !prev )

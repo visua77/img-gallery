@@ -121,7 +121,9 @@ select {
 .close-modal {
   position: relative;
   right:2%;
-  font-size: 3rem;
+  top:0;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 @media (max-width:900px) {
