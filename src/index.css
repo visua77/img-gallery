@@ -71,6 +71,7 @@ select {
 
 .card:hover .photo {
   background-color: black;
+  cursor: pointer;
 }
 
 .card:hover .modal-open {
