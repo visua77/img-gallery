@@ -65,6 +65,7 @@ select {
 
 .card img:hover {
   opacity: .8;
+  cursor: pointer;
 }
 
 .photo {
@@ -77,6 +78,12 @@ select {
 
 .modal-open {
   color:black;
+  transition: all ease-in-out .3s;
+  cursor: pointer;
+ }
+
+ .modal-open:hover {
+  color:white;
  }
 
 .modal {
