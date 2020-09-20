@@ -110,7 +110,7 @@ select {
   color:black;
   width:100%;
   height:100%;
-  background-color: rgba(0, 0, 0, .4);
+  background-color: rgba(0, 0, 0, .6);
 }
 
 .modal-active {
@@ -124,7 +124,7 @@ select {
   font-size: 6rem;;
   width:100%;
   height:100%;
-  background-color: rgba(0, 0, 0, .4);
+  background-color: rgba(0, 0, 0, .6);
 }
 
 .modal-active img {
@@ -176,15 +176,30 @@ select {
         transition: all ease-in-out .3s;
         }
 
-      .modal-active img {
+        .modal-active {
+          position: absolute;
+          top:0;
+          left:0;
+          display:flex;
+          pointer-events: all;
+          justify-content: center;
+          align-items: center;
+          color:white;
+          font-size: 6rem;;
           width:100%;
           height:100%;
+          background-color: rgba(0, 0, 0, .4);
+        }
+
+      .modal-active img {
+          width:90%;
+          height:90%;
           object-fit: cover;
           }
 
       .close-modal {
           position: relative;
-          top:10px;
+          top:-42%;
           right:6%;
           font-size: 2rem;
         }
