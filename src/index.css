@@ -176,8 +176,9 @@ select {
 
 
         .modal-active img {
-          width:80%;
+          width:90%;
           height:50%;
+          max-height:960/2.5;
           position: relative;
           top:40px;
           border:1px solid white;
