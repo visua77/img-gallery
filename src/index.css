@@ -45,7 +45,8 @@ select {
   align-items: center;
   }
 
-  .search {
+
+.search {
     margin-top:1rem;
     border-radius:10px;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, .15);;
@@ -54,10 +55,9 @@ select {
 
 .card {
   width:20%;
-  margin:2rem;
+  margin:1rem;
   border:1px solid gray;
-  
-  }
+}
 
 .card img {
   height:220px;
@@ -164,7 +164,8 @@ select {
 
     .card {
       width:382px;
-      margin:2rem;
+      margin:1rem;
+      margin-bottom: .5rem;
       border:1px solid gray;
       
       }
