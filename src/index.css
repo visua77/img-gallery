@@ -32,6 +32,7 @@ select {
   color:gray;
   border-radius:3px;
   border:1px solid rgba(0, 0, 0, .4);
+  margin-left:6px;
 }
 
 .wrapper {
@@ -44,7 +45,6 @@ select {
 
   .search {
     margin-top:1rem;
-    
     border-radius:10px;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, .15);;
     padding:1rem;
@@ -148,7 +148,7 @@ select {
     }
 
     .card {
-      width:80%;
+      width:382px;
       margin:2rem;
       border:1px solid gray;
       }
