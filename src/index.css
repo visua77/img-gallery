@@ -176,22 +176,15 @@ select {
         transition: all ease-in-out .3s;
         }
 
+      .modal-active img {
+          width:100%;
+          height:100%;
+          object-fit: cover;
+          }
 
-
-        .modal-active img {
-          width:90%;
-          height:50%;
-          max-height:960/2.5;
+      .close-modal {
           position: relative;
-          top:40px;
-          border:1px solid white;
-          
-          
-        }
-
-        .close-modal {
-          position: relative;
-          top:40px;
+          top:10px;
           right:6%;
           font-size: 2rem;
         }
