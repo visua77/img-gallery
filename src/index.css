@@ -25,6 +25,7 @@ input {
   color:silver;
   border-radius:3px;
   border:1px solid rgba(0, 0, 0, .4);
+  padding:.3rem;
 }
 
 select {
@@ -33,6 +34,7 @@ select {
   border-radius:3px;
   border:1px solid rgba(0, 0, 0, .4);
   margin-left:4px;
+  padding:.3rem;
 }
 
 .wrapper {

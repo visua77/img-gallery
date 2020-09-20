@@ -13,14 +13,8 @@ export const Search = () => {
 
     const url = `https://pixabay.com/api/?key=14784007-d6d8c8cf15352d491ac7f70be&q=${text}&image_type=photo&per_page=${amount}`
 
-
-/* const updateSelect = (e) => {
-  setInputtext('')
-  setInputtext(e.target.value)
-} */
-
     useEffect(() => {
-      //console.log(images)
+      
       fetch(url)
         .then((res) => res.json())
         .then((json) => {
@@ -48,29 +42,28 @@ export const Search = () => {
           .then((res) => res.json())
           .then((json) => setImages(json.hits))
           .catch(err => console.log(err))
-        }
+            }
         }
 
     const handleModal = () => {
         setModaltoggle(prev => !prev )
-            //setCimg(images.img.largeImageURL)
-
-    }
+        }
 
     const myRef = useRef(null)
     const executeScroll = () => scrollToRef(myRef)
 
-    //console.log(cimg)
+
     return (
         <div className="wrapper" ref={myRef}>
             <div className="search">
-            <input name="searchtext"  onChange={handleChange} ></input>
+            <input name="searchtext" placeholder="Type something" onChange={handleChange} ></input>
             <select onChange={(e)=> {
               handleNo(e)
               }}>
               <option value="8">8</option>
               <option value="16">16</option>
               <option value="32">32</option>
+              <option value="64">64</option>
             </select>
             </div>
 
@@ -86,7 +79,6 @@ export const Search = () => {
           >open</strong></span></span></span></div>
         ))
         : null
-        
         }
 
       <Modal id={cimg} class={modaltoggle} setModaltoggle={setModaltoggle} />
