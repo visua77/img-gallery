@@ -5,8 +5,8 @@ export const Modal = (props) => {
         props.setModaltoggle(false)
     }
     return(
-        <div className={props.class ? "modal-active" : "modal"}><img src={props.id} alt="img" />
-        <span className="close-modal" onClick={handleClose}>X</span></div>
+        <div className={props.class ? "modal-active" : "modal"}  onClick={handleClose} ><img src={props.id} alt="img" />
+        <span className="close-modal">X</span></div>
     )
 }
 

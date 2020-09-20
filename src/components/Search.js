@@ -51,7 +51,11 @@ export const Search = () => {
             </div>
 
         {images.map((img) => (
-        <div className="card" key={img.id}><span><img src={img.largeImageURL} alt='img' /><span className="photo"><span><strong>Photo: {img.user}</strong></span><span><strong className="modal-open"
+        <div className="card" key={img.id}><span><img src={img.largeImageURL} alt='img' onClick={()=> {handleModal()
+          setCimg(img.largeImageURL)
+          executeScroll()
+        }} />
+        <span className="photo"><span><strong>Photo: {img.user}</strong></span><span><strong className="modal-open"
         onClick={()=> {handleModal()
                       setCimg(img.largeImageURL)
                       executeScroll()
