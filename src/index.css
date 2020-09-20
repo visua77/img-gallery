@@ -54,6 +54,7 @@ select {
   width:20%;
   margin:2rem;
   border:1px solid gray;
+  
   }
 
 .card img {
@@ -68,12 +69,21 @@ select {
   cursor: pointer;
 }
 
+.card:hover .photo {
+  background-color: black;
+}
+
+.card:hover .modal-open {
+  color:gray;
+}
+
 .photo {
   display:flex;
   justify-content: space-between;
   color:white;
   padding:1rem;
   background-color: rgba(0, 0, 0, .4);
+  transition: all ease-in-out .3s;
 }
 
 .modal-open {
