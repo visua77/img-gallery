@@ -70,12 +70,12 @@ select {
 }
 
 .card:hover .photo {
-  background-color: black;
+  background-color: gray;
   cursor: pointer;
 }
 
 .card:hover .modal-open {
-  color:gray;
+  color:black;
 }
 
 .photo {
@@ -83,12 +83,12 @@ select {
   justify-content: space-between;
   color:white;
   padding:1rem;
-  background-color: rgba(0, 0, 0, .4);
+  background-color: rgba(0, 0, 0);
   transition: all ease-in-out .3s;
 }
 
 .modal-open {
-  color:black;
+  color:silver;
   transition: all ease-in-out .3s;
   cursor: pointer;
  }

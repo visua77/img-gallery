@@ -4,6 +4,7 @@ import {Modal} from './Modal'
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)  
 
 export const Search = () => {
+    //const[inputtext, setInputtext] = useState('Type here')
     const[text, setText] = useState('')
     const[images, setImages] = useState([])
     const[amount, setAmount] = useState(6)
@@ -13,21 +14,28 @@ export const Search = () => {
     const url = `https://pixabay.com/api/?key=14784007-d6d8c8cf15352d491ac7f70be&q=${text}&image_type=photo&per_page=${amount}`
 
 
+/* const updateSelect = (e) => {
+  setInputtext('')
+  setInputtext(e.target.value)
+} */
 
     useEffect(() => {
       //console.log(amount)
       fetch(url)
         .then((res) => res.json())
         .then((json) => {
-          if(text != ''){
+          if(text !== ''){
           setImages(json.hits)
-        }
+          
+}
           else if(text === ''){
           setImages([])
+          
           }
         })
         .catch(err => console.log(err))
     }, [amount][images])
+    
     
     const handleNo = (e) => {
       setAmount(e.target.value)
@@ -35,9 +43,9 @@ export const Search = () => {
       //setText(e.target.value)
     }
     
-    
     const handleChange = (e) => {
         setText(e.target.value)
+        
         fetch(url)
         .then((res) => res.json())
         .then((json) => {
@@ -59,7 +67,7 @@ export const Search = () => {
     return (
         <div className="wrapper" ref={myRef}>
             <div className="search">
-            <input name="searchtext" onChange={handleChange}></input>
+            <input name="searchtext"  onChange={handleChange} ></input>
             <select onChange={(e)=> {
               handleNo(e)
               }}>
