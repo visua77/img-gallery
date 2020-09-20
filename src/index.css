@@ -150,6 +150,13 @@ select {
     
     }
 
+    .search {
+      margin-top:1rem;
+      border-radius:10px;
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, .15);;
+      padding:.4rem;
+    }
+
     .card {
       width:382px;
       margin:2rem;
