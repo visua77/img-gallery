@@ -10,7 +10,7 @@ export const Search = () => {
     const[amount, setAmount] = useState(6)
     const[cimg, setCimg] = useState()
     const[modaltoggle, setModaltoggle] = useState(false)
-    //console.log(amount)
+
     const url = `https://pixabay.com/api/?key=14784007-d6d8c8cf15352d491ac7f70be&q=${text}&image_type=photo&per_page=${amount}`
 
 
@@ -20,39 +20,36 @@ export const Search = () => {
 } */
 
     useEffect(() => {
-      console.log(images)
+      //console.log(images)
       fetch(url)
         .then((res) => res.json())
         .then((json) => {
           if(text !== ''){
           setImages(json.hits)
-          
-}
-          else if(text === ''){
-          setImages([])
-          
           }
         })
         .catch(err => console.log(err))
     }, [amount])
-    
+
     
     const handleNo = (e) => {
       setAmount(e.target.value)
-      //console.log(amount)
-      //setText(e.target.value)
     }
     
     const handleChange = (e) => {
-        setText(e.target.value)
-        
-        fetch(url)
-        .then((res) => res.json())
-        .then((json) => {
-          setImages(json.hits)
-        })
-        .catch(err => console.log(err))
-    }
+      const val = e.target.value
+        setText(val)
+
+        if(val===''){
+          setImages([])
+        }
+        else{
+          fetch(url)
+          .then((res) => res.json())
+          .then((json) => setImages(json.hits))
+          .catch(err => console.log(err))
+        }
+        }
 
     const handleModal = () => {
         setModaltoggle(prev => !prev )
@@ -77,14 +74,20 @@ export const Search = () => {
             </select>
             </div>
 
-        {images.map((img) => (
-        <div className="card" key={img.id} onClick={()=> {handleModal()
-          setCimg(img.largeImageURL)
-          executeScroll()
-        }}><span><img src={img.largeImageURL} alt='img' />
-        <span className="photo"><span><strong>Photo: {img.user}</strong></span><span><strong className="modal-open"
-        >open</strong></span></span></span></div>
-      ))}
+        {
+        
+        (images.length > 0)
+        ? images.map((img) => (
+          <div className="card" key={img.id} onClick={()=> {handleModal()
+            setCimg(img.largeImageURL)
+            executeScroll()
+          }}><span><img src={img.largeImageURL} alt='img' />
+          <span className="photo"><span><strong>Photo: {img.user}</strong></span><span><strong className="modal-open"
+          >open</strong></span></span></span></div>
+        ))
+        : null
+        
+        }
 
       <Modal id={cimg} class={modaltoggle} setModaltoggle={setModaltoggle} />
     </div>
