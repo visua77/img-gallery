@@ -20,7 +20,7 @@ export const Search = () => {
 } */
 
     useEffect(() => {
-      //console.log(amount)
+      console.log(images)
       fetch(url)
         .then((res) => res.json())
         .then((json) => {
@@ -34,7 +34,7 @@ export const Search = () => {
           }
         })
         .catch(err => console.log(err))
-    }, [amount][images])
+    }, [amount])
     
     
     const handleNo = (e) => {
