@@ -22,13 +22,12 @@ export const Search = () => {
           if(text != ''){
           setImages(json.hits)
         }
-        if(text === ''){
+          else if(text === ''){
           setImages([])
-          console.log(images)
-        }
+          }
         })
         .catch(err => console.log(err))
-    }, [amount])
+    }, [amount][images])
     
     const handleNo = (e) => {
       setAmount(e.target.value)
