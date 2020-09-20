@@ -7,7 +7,7 @@ export const Search = () => {
     //const[inputtext, setInputtext] = useState('Type here')
     const[text, setText] = useState('')
     const[images, setImages] = useState([])
-    const[amount, setAmount] = useState(6)
+    const[amount, setAmount] = useState(8)
     const[cimg, setCimg] = useState()
     const[modaltoggle, setModaltoggle] = useState(false)
 
@@ -68,9 +68,9 @@ export const Search = () => {
             <select onChange={(e)=> {
               handleNo(e)
               }}>
-              <option value="6">6</option>
-              <option value="12">12</option>
-              <option value="24">24</option>
+              <option value="8">8</option>
+              <option value="16">16</option>
+              <option value="32">32</option>
             </select>
             </div>
 
