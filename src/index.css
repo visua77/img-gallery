@@ -63,6 +63,7 @@ select {
   height:220px;
   width:100%;
   max-width:382px;
+  object-fit: cover;
   transition: all ease-in-out .3s;
   }
 
@@ -131,6 +132,7 @@ select {
   cursor: pointer;
   max-width:1280px;
   max-height: 1280px;
+  object-fit: cover;
 }
 
 .close-modal {
