@@ -13,9 +13,8 @@ export const Search = () => {
 
     const url = `https://pixabay.com/api/?key=14784007-d6d8c8cf15352d491ac7f70be&q=${text}&image_type=photo&per_page=${amount}`
 
-    console.log(text)
-
-    useEffect(() => {
+   
+   useEffect(() => {
       
       fetch(url)
         .then((res) => res.json())
@@ -25,20 +24,24 @@ export const Search = () => {
           }
         })
         .catch(err => console.log(err))
-    }, [amount])
+    }, [amount,text,url])
 
 
     useEffect(()=> {
 
-      fetch(url)
-      .then((res) => res.json())
-      .then((json) => setImages(json.hits))
-      .catch(err => console.log(err))
-        
+      if(text===''){
+        setImages([])
+      }
+      
+      else {
+      
+        fetch(url)
+        .then((res) => res.json())
+        .then((json) => setImages(json.hits))
+        .catch(err => console.log(err))
+      }
+      },[text,url])
 
-    },[text])
-
-    
     const handleNo = (e) => {
       setAmount(e.target.value)
     }
@@ -46,17 +49,7 @@ export const Search = () => {
     const handleChange = (e) => {
       const val = e.target.value
         setText(val)
-
-     /*    if(val===''){
-          setImages([])
-        }
-        else{
-          fetch(url)
-          .then((res) => res.json())
-          .then((json) => setImages(json.hits))
-          .catch(err => console.log(err))
-            } */
-        }
+    }
 
     const handleModal = () => {
         setModaltoggle(prev => !prev )
