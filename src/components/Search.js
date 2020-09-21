@@ -13,6 +13,8 @@ export const Search = () => {
 
     const url = `https://pixabay.com/api/?key=14784007-d6d8c8cf15352d491ac7f70be&q=${text}&image_type=photo&per_page=${amount}`
 
+    console.log(text)
+
     useEffect(() => {
       
       fetch(url)
@@ -25,6 +27,17 @@ export const Search = () => {
         .catch(err => console.log(err))
     }, [amount])
 
+
+    useEffect(()=> {
+
+      fetch(url)
+      .then((res) => res.json())
+      .then((json) => setImages(json.hits))
+      .catch(err => console.log(err))
+        
+
+    },[text])
+
     
     const handleNo = (e) => {
       setAmount(e.target.value)
@@ -34,7 +47,7 @@ export const Search = () => {
       const val = e.target.value
         setText(val)
 
-        if(val===''){
+     /*    if(val===''){
           setImages([])
         }
         else{
@@ -42,7 +55,7 @@ export const Search = () => {
           .then((res) => res.json())
           .then((json) => setImages(json.hits))
           .catch(err => console.log(err))
-            }
+            } */
         }
 
     const handleModal = () => {
